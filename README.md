@@ -9,9 +9,13 @@ To write a program to implement the the Logistic Regression Model to Predict the
 
 ## Algorithm
 STEP 1: Load the California Housing dataset and select the first 3 features as input (X) and target variables (Y) (including the target price and another feature).
+
 STEP 2: Split the data into training and testing sets, then scale (standardize) both the input features and target variables.
+
 STEP 3: Train a multi-output regression model using Stochastic Gradient Descent (SGD) on the training data.
+
 STEP 4: Make predictions on the test data, inverse transform the predictions, calculate the Mean Squared Error, and print the results.
+
 ## Program:
 ```
 /*
