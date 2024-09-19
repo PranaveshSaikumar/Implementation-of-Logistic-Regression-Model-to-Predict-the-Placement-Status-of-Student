@@ -8,69 +8,61 @@ To write a program to implement the the Logistic Regression Model to Predict the
 2. Anaconda – Python 3.7 Installation / Jupyter notebook
 
 ## Algorithm
-STEP 1: Load the California Housing dataset and select the first 3 features as input (X) and target variables (Y) (including the target price and another feature).
-
-STEP 2: Split the data into training and testing sets, then scale (standardize) both the input features and target variables.
-
-STEP 3: Train a multi-output regression model using Stochastic Gradient Descent (SGD) on the training data.
-
-STEP 4: Make predictions on the test data, inverse transform the predictions, calculate the Mean Squared Error, and print the results.
+step 1. Import the Standard Libraries
+step 2. Set Variables for Assigning Dataset Values
+step 3. Import Logistic Regression from sklearn
+step 4. Assign the Points for Representing in the Graph
+step 5. Predict the Placement Status by Using the Logistic Regression Model
+step 6. Compare the Graphs and Evaluate the Model's Performance
 
 ## Program:
 ```
-/*
 Program to implement the the Logistic Regression Model to Predict the Placement Status of Student.
 Developed by: Pranavesh Saikumar
-RegisterNumber: 212223040149
-*/
-
-import numpy as np
-from sklearn.datasets import fetch_california_housing
-from sklearn.linear_model import SGDRegressor
-from sklearn.multioutput import MultiOutputRegressor
+RegisterNumber: 212223040149 
+import pandas as pd
+data = pd.read_csv("C:/Users/admin/OneDrive/Desktop/Placement_Data.csv")
+print(data.head())
+data1= data.copy()
+data1= data1.drop(["sl_no","salary"],axis=1)
+data1.head()
+data1.isnull()
+from sklearn.preprocessing import LabelEncoder
+le= LabelEncoder()
+data1["gender"]= le.fit_transform(data1["gender"])
+data1["ssc_b"]=le.fit_transform(data1["ssc_b"])
+data1["hsc_b"]= le.fit_transform(data1["hsc_b"])
+data1["hsc_s"]= le.fit_transform(data1["hsc_s"])
+data1["degree_t"]= le.fit_transform(data["degree_t"])
+data1["workex"]= le.fit_transform(data1["workex"])
+data1["specialisation"]= le.fit_transform(data1["specialisation"])
+data1["status"]= le.fit_transform(data1["status"])
+data1
+x= data1.iloc[:,:-1]
+x
+y=data1["status"]
+y
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import mean_squared_error
-from sklearn.preprocessing import StandardScaler
-
-data = fetch_california_housing()
-
-X=data.data[:,:3]
-
-Y=np.column_stack((data.target,data.data[:,6]))
-
-X_train,X_test,Y_train,Y_test = train_test_split(X,Y,test_size=0.2,random_state=42)
-
-scaler_X = StandardScaler()
-scaler_Y = StandardScaler()
-
-X_train = scaler_X.fit_transform(X_train)
-X_test = scaler_X.transform(X_test)
-Y_train = scaler_Y.fit_transform(Y_train)
-Y_test = scaler_Y.transform(Y_test)
-
-sgd=SGDRegressor(max_iter=1000,tol=1e-3)
-
-multi_output_sgd = MultiOutputRegressor(sgd)
-
-multi_output_sgd.fit(X_train,Y_train)
-
-Y_pred = multi_output_sgd.predict(X_test)
-
-Y_pred=scaler_Y.inverse_transform(Y_pred)
-Y_test = scaler_Y.inverse_transform(Y_test)
-
-mse = mean_squared_error(Y_test,Y_pred)
-print("Mean Squared Error:",mse)
-print("\nPredictions:\n",Y_pred[:5])
-
-
-
+x_train,x_test,y_train,y_test= train_test_split(x,y,test_size=0.2,random_state=0)
+from sklearn.linear_model import LogisticRegression
+lr= LogisticRegression(solver="liblinear")
+lr.fit(x_train,y_train)
+y_pred= lr.predict(x_test)
+y_pred
+from sklearn.metrics import accuracy_score
+accuracy=accuracy_score(y_test,y_pred)
+accuracy
+from sklearn.metrics import classification_report
+classification_report1= classification_report(y_test,y_pred)
+print(classification_report1)
+lr.predict([[1,80,1,90,1,1,90,1,0,85,1,85]])
 ```
 
 ## Output:
+![Screenshot 2024-09-16 102823](https://github.com/user-attachments/assets/dbcdd5fb-bccf-43c7-a7f3-1f8b3715e341)
 
-![image](https://github.com/user-attachments/assets/0337574a-5445-4cf0-83db-c9aafe52d0ac)
-
+![Screenshot 2024-09-16 102829](https://github.com/user-attachments/assets/cf3d9c79-fd9d-4ea5-9951-6e309cc63ad8)
 
 ## Result:
+
 Thus the program to implement the the Logistic Regression Model to Predict the Placement Status of Student is written and verified using python programming.
