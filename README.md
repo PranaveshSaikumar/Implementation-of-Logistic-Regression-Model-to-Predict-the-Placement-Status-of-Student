@@ -8,11 +8,16 @@ To write a program to implement the the Logistic Regression Model to Predict the
 2. Anaconda – Python 3.7 Installation / Jupyter notebook
 
 ## Algorithm
-step 1. Import the Standard Libraries
+step 1. Import the Standard Libraries 
+
 step 2. Set Variables for Assigning Dataset Values
+
 step 3. Import Logistic Regression from sklearn
-step 4. Assign the Points for Representing in the Graph
+
+step 4. Assign the Points for Representing in the Graph 
+
 step 5. Predict the Placement Status by Using the Logistic Regression Model
+
 step 6. Compare the Graphs and Evaluate the Model's Performance
 
 ## Program:
