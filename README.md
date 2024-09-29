@@ -2,11 +2,11 @@
 
 ## AIM:
 To write a program to implement the the Logistic Regression Model to Predict the Placement Status of Student.
-
+<br><br>
 ## Equipments Required:
 1. Hardware – PCs
 2. Anaconda – Python 3.7 Installation / Jupyter notebook
-
+<br><br>
 ## Algorithm
 step 1. Import the Standard Libraries 
 
@@ -19,7 +19,7 @@ step 4. Assign the Points for Representing in the Graph
 step 5. Predict the Placement Status by Using the Logistic Regression Model
 
 step 6. Compare the Graphs and Evaluate the Model's Performance
-
+<br><br><br><br><br><br><br><br><br><br><br><br>
 ## Program:
 ```
 /*Program to implement the the Logistic Regression Model to Predict the Placement Status of Student.
