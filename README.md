@@ -21,7 +21,7 @@ step 5. Predict the Placement Status by Using the Logistic Regression Model
 step 6. Compare the Graphs and Evaluate the Model's Performance
 
 ## Program:
-```
+
 Program to implement the the Logistic Regression Model to Predict the Placement Status of Student.
 Developed by: Pranavesh Saikumar
 RegisterNumber: 212223040149 
@@ -61,7 +61,7 @@ from sklearn.metrics import classification_report
 classification_report1= classification_report(y_test,y_pred)
 print(classification_report1)
 lr.predict([[1,80,1,90,1,1,90,1,0,85,1,85]])
-```
+
 
 ## Output:
 ![Screenshot 2024-09-16 102823](https://github.com/user-attachments/assets/dbcdd5fb-bccf-43c7-a7f3-1f8b3715e341)
