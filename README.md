@@ -63,7 +63,7 @@ classification_report1= classification_report(y_test,y_pred)
 print(classification_report1)
 lr.predict([[1,80,1,90,1,1,90,1,0,85,1,85]])
 ```
-<br><br>
+<br><br><br><br><br>
 ## Output:
 ![Screenshot 2024-09-16 102823](https://github.com/user-attachments/assets/dbcdd5fb-bccf-43c7-a7f3-1f8b3715e341)
 
